@@ -14,6 +14,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'John Doe',
       avatar: 'https://picsum.photos/seed/author1/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '10:30'
   },
   {
@@ -28,6 +29,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'Jane Smith',
       avatar: 'https://picsum.photos/seed/author2/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '15:45'
   },
   {
@@ -42,6 +44,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'Sarah Wilson',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   },
   {
@@ -56,6 +59,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'Sarah Wilson',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   },
   {
@@ -70,6 +74,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'samsi',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   },
   {
@@ -84,6 +89,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'samsi',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   },
   {
@@ -98,6 +104,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'samsi',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   },
   {
@@ -112,6 +119,7 @@ export const MOCK_CONTENT: Content[] = [
       name: 'samsi',
       avatar: 'https://picsum.photos/seed/author3/40/40'
     },
+    tags: ['react', 'javascript', 'frontend'],
     duration: '8:20'
   }
 ];

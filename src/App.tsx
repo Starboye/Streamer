@@ -1058,6 +1058,194 @@
 // =============== hower mess up ================
 
 
+// import React, { useState } from "react";
+// import { MOCK_CONTENT } from "./data/mockContent";
+
+// const App: React.FC = () => {
+//   const [searchQuery, setSearchQuery] = useState("");
+//   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+//   const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
+
+//   const filteredContent = MOCK_CONTENT.filter(
+//     (video) =>
+//       video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//       video.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//       video.author.name.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
+//   const handleVideoClick = (videoId: string) => {
+//     setSelectedVideo(videoId);
+//   };
+
+//   const handleBackToList = () => {
+//     setSelectedVideo(null);
+//   };
+
+//   if (selectedVideo) {
+//     const video = MOCK_CONTENT.find((v) => v.id === selectedVideo);
+//     return (
+//       <div className="video-details-page">
+//         <button onClick={handleBackToList} style={{ marginBottom: "20px" }}>
+//           Back to Videos
+//         </button>
+//         {video && (
+//           <>
+//             <video
+//               src={video.videoUrl}
+//               controls
+//               autoPlay
+//               style={{ width: "100%", maxHeight: "400px" }}
+//             />
+//             <h1>{video.title}</h1>
+//             <p>{video.description}</p>
+//             <p>By {video.author.name}</p>
+//           </>
+//         )}
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="app-container">
+//       <nav className="navbar">
+//         <div className="navbar-logo">
+//           <img src="/path-to-logo/logo.png" alt="Logo" />
+//         </div>
+//         <div className="navbar-search">
+//           <input
+//             type="text"
+//             placeholder="Search..."
+//             value={searchQuery}
+//             onChange={(e) => setSearchQuery(e.target.value)}
+//           />
+//         </div>
+//         <div className="navbar-login">
+//           <button>Login</button>
+//         </div>
+//       </nav>
+//       <div className="banner">
+//         <img
+//           className="banner-image"
+//           src="https://picsum.photos/1920/400"
+//           alt="Banner"
+//         />
+//       </div>
+//       <div className="video-grid">
+//         {filteredContent.map((video) => (
+//           <div
+//             className="video-card"
+//             key={video.id}
+//             onClick={() => handleVideoClick(video.id)}
+//             onMouseEnter={() => setHoveredVideo(video.id)}
+//             onMouseLeave={() => setHoveredVideo(null)}
+//           >
+//             {hoveredVideo === video.id ? (
+//               <video src={video.videoUrl} autoPlay muted loop></video>
+//             ) : (
+//               <img src={video.thumbnail} alt={video.title} />
+//             )}
+//             <div className="video-details">
+//               <h3>{video.title}</h3>
+//               <p>{video.description}</p>
+//               <p>By {video.author.name}</p>
+//             </div>
+//           </div>
+//         ))}
+//         {filteredContent.length === 0 && (
+//           <p style={{ color: "white" }}>No videos match your search.</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// 123
+// =========================
+
+// import React, { useState } from 'react';
+// import { MOCK_CONTENT } from './data/mockContent';
+
+// const App: React.FC = () => {
+//   const [selectedVideo, setSelectedVideo] = useState<any | null>(null);
+
+//   const handleVideoClick = (video: any) => {
+//     setSelectedVideo(video); // Set the selected video
+//   };
+
+//   const similarVideos =
+//     selectedVideo &&
+//     MOCK_CONTENT.filter(
+//       (content) =>
+//         content.id !== selectedVideo.id && // Exclude the current video
+//         content.tags.some((tags: string) => selectedVideo.tags.includes(tags)) // Match tags
+//     );
+
+//   return (
+//     <div>
+//       {selectedVideo ? (
+//         <div style={{ margin: '20px', color: 'neonpink' }}>
+//           <button onClick={() => setSelectedVideo(null)} style={{ marginBottom: '10px' }}>
+//             Back to Home
+//           </button>
+//           <h1>{selectedVideo.title}</h1>
+//           <video src={selectedVideo.videoUrl} controls style={{ width: '100%', height: 'auto' }}></video>
+//           <p>{selectedVideo.description}</p>
+
+//           <div>
+//             <h2>Similar Videos</h2>
+//             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+//               {similarVideos &&
+//                 similarVideos.map((video) => (
+//                   <div
+//                     key={video.id}
+//                     style={{ width: '22%', margin: '10px 0', cursor: 'pointer' }}
+//                     onClick={() => handleVideoClick(video)}
+//                   >
+//                     <img
+//                       src={video.thumbnail}
+//                       alt={video.title}
+//                       style={{ width: '100%', height: 'auto' }}
+//                     />
+//                     <h3 style={{ fontSize: '14px', margin: '5px 0' }}>{video.title}</h3>
+//                     <p style={{ fontSize: '12px', color: '#ccc' }}>{video.description}</p>
+//                   </div>
+//                 ))}
+//             </div>
+//           </div>
+//         </div>
+//       ) : (
+//         <div>
+//           <h1>Video Library</h1>
+//           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+//             {MOCK_CONTENT.map((video) => (
+//               <div
+//                 key={video.id}
+//                 style={{ width: '22%', margin: '10px 0', cursor: 'pointer' }}
+//                 onClick={() => handleVideoClick(video)}
+//               >
+//                 <img
+//                   src={video.thumbnail}
+//                   alt={video.title}
+//                   style={{ width: '100%', height: 'auto' }}
+//                 />
+//                 <h3 style={{ fontSize: '14px', margin: '5px 0' }}>{video.title}</h3>
+//                 <p style={{ fontSize: '12px', color: '#ccc' }}>{video.description}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+
 import React, { useState } from "react";
 import { MOCK_CONTENT } from "./data/mockContent";
 
@@ -1083,6 +1271,12 @@ const App: React.FC = () => {
 
   if (selectedVideo) {
     const video = MOCK_CONTENT.find((v) => v.id === selectedVideo);
+    const similarVideos = MOCK_CONTENT.filter(
+      (v) =>
+        v.id !== selectedVideo && // Exclude the currently selected video
+        v.tags.some((tag) => video?.tags.includes(tag)) // Check for matching tags
+    );
+
     return (
       <div className="video-details-page">
         <button onClick={handleBackToList} style={{ marginBottom: "20px" }}>
@@ -1099,6 +1293,40 @@ const App: React.FC = () => {
             <h1>{video.title}</h1>
             <p>{video.description}</p>
             <p>By {video.author.name}</p>
+            <h2>Similar Videos</h2>
+            <div className="video-grid">
+              {similarVideos.map((similarVideo) => (
+                <div
+                  className="video-card"
+                  key={similarVideo.id}
+                  onClick={() => handleVideoClick(similarVideo.id)}
+                  onMouseEnter={() => setHoveredVideo(similarVideo.id)}
+                  onMouseLeave={() => setHoveredVideo(null)}
+                >
+                  {hoveredVideo === similarVideo.id ? (
+                    <video
+                      src={similarVideo.videoUrl}
+                      autoPlay
+                      muted
+                      loop
+                    ></video>
+                  ) : (
+                    <img
+                      src={similarVideo.thumbnail}
+                      alt={similarVideo.title}
+                    />
+                  )}
+                  <div className="video-details">
+                    <h3>{similarVideo.title}</h3>
+                    <p>{similarVideo.description}</p>
+                    <p>By {similarVideo.author.name}</p>
+                  </div>
+                </div>
+              ))}
+              {similarVideos.length === 0 && (
+                <p style={{ color: "white" }}>No similar videos found.</p>
+              )}
+            </div>
           </>
         )}
       </div>
@@ -1160,3 +1388,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

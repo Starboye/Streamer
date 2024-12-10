@@ -12,5 +12,6 @@ export interface Content {
   createdAt: string;
   views: number;
   author: Author;
+  tags: string[];
   duration: string;  // Added duration field
 }
