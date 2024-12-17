@@ -1337,7 +1337,7 @@ const App: React.FC = () => {
     <div className="app-container">
       <nav className="navbar">
         <div className="navbar-logo">
-          <img src="/path-to-logo/logo.png" alt="Logo" />
+          <img src="src\utils\Streamrrrrrrrrrrrrr_logo_png.png" alt="Logo" />
         </div>
         <div className="navbar-search">
           <input
